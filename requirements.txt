@@ -1,0 +1,7 @@
+Flask
+langgraph
+langchain
+langchain-openai
+langchain-openrouter
+python-dotenv
+langchain-core
