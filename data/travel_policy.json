@@ -1,0 +1,63 @@
+{
+  "policy_name": "Company Travel Policy",
+  "company_budget": 1000000,
+  "currency": "INR",
+  "budget_period": "per_day",
+  "tiers": [
+    {
+      "tier": "t1",
+      "min_salary_lpa": 0,
+      "max_salary_lpa": 5,
+      "daily_budget": 8000
+    },
+    {
+      "tier": "t2",
+      "min_salary_lpa": 5,
+      "max_salary_lpa": 10,
+      "daily_budget": 10000
+    },
+    {
+      "tier": "t3",
+      "min_salary_lpa": 10,
+      "max_salary_lpa": 20,
+      "daily_budget": 15000
+    },
+    {
+      "tier": "t4",
+      "min_salary_lpa": 20,
+      "max_salary_lpa": 30,
+      "daily_budget": 18000
+    },
+    {
+      "tier": "t5",
+      "min_salary_lpa": 30,
+      "max_salary_lpa": 40,
+      "daily_budget": 20000
+    },
+    {
+      "tier": "t6",
+      "min_salary_lpa": 40,
+      "max_salary_lpa": 60,
+      "daily_budget": 25000
+    },
+    {
+      "tier": "t7",
+      "min_salary_lpa": 60,
+      "max_salary_lpa": 80,
+      "daily_budget": 30000
+    },
+    {
+      "tier": "t8",
+      "min_salary_lpa": 80,
+      "max_salary_lpa": 100,
+      "daily_budget": 50000
+    },
+    {
+      "tier": "t9",
+      "min_salary_lpa": 100,
+      "max_salary_lpa": null,
+      "daily_budget": null,
+      "unlimited": true
+    }
+  ]
+}

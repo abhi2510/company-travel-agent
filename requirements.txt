@@ -5,3 +5,4 @@ langchain-openai
 langchain-openrouter
 python-dotenv
 langchain-core
+pandas

@@ -9,4 +9,10 @@ class TravelState(TypedDict):
     to_dates: str
     total_travel_days: int
     budget: float
+    outbound_flight_details: list[dict]
+    inbound_flight_details: list[dict]
+    outbound_bus_details: list[dict]
+    inbound_bus_details: list[dict]
+    outbound_train_details: list[dict]
+    inbound_train_details: list[dict]
     preferences: list[str]
