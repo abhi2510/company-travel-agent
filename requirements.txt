@@ -6,3 +6,4 @@ langchain-openrouter
 python-dotenv
 langchain-core
 pandas
+langsmith

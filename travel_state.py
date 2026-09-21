@@ -15,4 +15,7 @@ class TravelState(TypedDict):
     inbound_bus_details: list[dict]
     outbound_train_details: list[dict]
     inbound_train_details: list[dict]
+    hotel_options: list[dict]
+    restaurant_options: list[dict]
     preferences: list[str]
+    itenary_info_details: str

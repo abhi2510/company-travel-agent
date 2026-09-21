@@ -1,5 +1,5 @@
 from travel_state import TravelState
-from llm_openrouter import llm
+from llm_openrouter import llm, llm_invoke
 import json
 
 class OrchestratorAgent:
@@ -43,7 +43,7 @@ class OrchestratorAgent:
             5. Ensure the JSON is syntactically valid.
             """.strip()
 
-        response = llm.invoke(prompt)
-        travel_info_data = json.loads(response.content.strip())
+        response = llm_invoke(prompt)
+        travel_info_data = json.loads(response)
         print(f"Extracted travel info: {travel_info_data}")
         return travel_info_data

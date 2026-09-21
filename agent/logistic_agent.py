@@ -11,9 +11,9 @@ class LogisticAgent:
         with open('data/mock_trains.json', 'r') as f:
             train_data = json.load(f)
         df = pd.DataFrame(train_data)
-        train_row = df[(df['source'] == source) & (df['destination'] == destination)]
+        train_row = df[(df['source'].str.lower() == source.lower()) & (df['destination'].str.lower() == destination.lower())]
         train_records = train_row.to_dict(orient='records')
-        print(f"Train details: {train_records}")
+        # print(f"Train details: {train_records}")
         return train_records
 
     @classmethod
@@ -21,9 +21,9 @@ class LogisticAgent:
         with open('data/mock_buses.json', 'r') as f:
             bus_data = json.load(f)
         df = pd.DataFrame(bus_data)
-        bus_row = df[(df['source'] == source) & (df['destination'] == destination)]
+        bus_row = df[(df['source'].str.lower() == source.lower()) & (df['destination'].str.lower() == destination.lower())]
         bus_records = bus_row.to_dict(orient='records')
-        print(f"Bus details: {bus_records}")
+        # print(f"Bus details: {bus_records}")
         return bus_records
 
     @classmethod
@@ -31,13 +31,14 @@ class LogisticAgent:
         with open('data/mock_flights.json', 'r') as f:
             flight_data = json.load(f)
         df = pd.DataFrame(flight_data)
-        flight_row = df[(df['source'] == source) & (df['destination'] == destination)]
+        flight_row = df[(df['source'].str.lower() == source.lower()) & (df['destination'].str.lower() == destination.lower())]
         flight_records = flight_row.to_dict(orient='records')
-        print(f"Flight details: {flight_records}")
+        # print(f"Flight details: {flight_records}")
         return flight_records
     
     @classmethod
-    def get_travel_budget(cls, state: TravelState):
+    def get_travel_options(cls, state: TravelState):
+        print("Fetching travel options based on the extracted travel information...")
         source = state['source_place']
         destination = state['destination_place']
         # ---- Get flight details ----
@@ -49,7 +50,8 @@ class LogisticAgent:
         # ---- Get train details ----
         outbound_train_details = cls.get_train_details(source, destination)
         inbound_train_details = cls.get_train_details(destination, source)
-
+        print(f"Outbound flights: {len(outbound_flight_details)}, Inbound flights: {len(inbound_flight_details)}, Outbound buses: {len(outbound_bus_details)}, Inbound buses: {len(inbound_bus_details)}, Outbound trains: {len(outbound_train_details)}, Inbound trains: {len(inbound_train_details)}")
+        print("Travel options fetched successfully.")
         return {
             "outbound_flight_details": outbound_flight_details,
             "inbound_flight_details": inbound_flight_details,
