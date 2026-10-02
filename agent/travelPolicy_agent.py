@@ -15,7 +15,7 @@ class TravelPolicyAgent:
         employee_row = df[df['Email'] == employee_email]
         if not employee_row.empty:
             salary = employee_row['Salary'].values[0]
-            return salary
+            return float(salary)
         else:
             print(f"No employee found with email: {employee_email}")
         return None
@@ -27,6 +27,7 @@ class TravelPolicyAgent:
         final_budget = 0
         salary = cls.get_employee_salary(employee_email)
         if salary is not None:
+            salary = float(salary)
             with open('data/travel_policy.json', 'r') as f:
                 travel_policy = json.load(f)
             
@@ -34,8 +35,8 @@ class TravelPolicyAgent:
             df_budget = pd.DataFrame(policy_budget)
             budget_row = df_budget[(df_budget['min_salary_lpa'] <= salary) & (df_budget['max_salary_lpa'] > salary)]
             if not budget_row.empty:
-                daily_budget = budget_row['daily_budget'].values[0]
+                daily_budget = float(budget_row['daily_budget'].values[0])
                 if daily_budget is not None:
-                    final_budget = daily_budget * total_travel_days  # Assuming 30 days in a month
+                    final_budget = float(daily_budget * total_travel_days)  # Assuming 30 days in a month
                 print(f"Travel Budget: {final_budget}")
-        return {"budget": final_budget}
+        return {"budget": float(final_budget)}

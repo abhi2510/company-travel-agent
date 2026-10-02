@@ -19,3 +19,4 @@ class TravelState(TypedDict):
     restaurant_options: list[dict]
     preferences: list[str]
     itenary_info_details: str
+    missing_fields: list[str]
