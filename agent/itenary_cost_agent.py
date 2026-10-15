@@ -176,6 +176,6 @@ class ItenaryCostAgent:
         """
 
         response = llm_invoke(prompt)
-        print(f"LLM response: {response}")
+        # print(f"LLM response: {response}")
         print("Itinerary generated and total cost calculated successfully.")
         return {"itenary_info_details": response.strip() }

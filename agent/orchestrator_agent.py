@@ -71,7 +71,6 @@ class OrchestratorAgent:
 
     @classmethod
     def check_missing_fields(cls, state: TravelState):
-        print(f"Checking missing fields: {state.get('missing_fields')}")
         if state.get("missing_fields"):
             return "missing"
         else:

@@ -50,7 +50,7 @@ class LogisticAgent:
         # ---- Get train details ----
         outbound_train_details = cls.get_train_details(source, destination)
         inbound_train_details = cls.get_train_details(destination, source)
-        print(f"Outbound flights: {len(outbound_flight_details)}, Inbound flights: {len(inbound_flight_details)}, Outbound buses: {len(outbound_bus_details)}, Inbound buses: {len(inbound_bus_details)}, Outbound trains: {len(outbound_train_details)}, Inbound trains: {len(inbound_train_details)}")
+        # print(f"Outbound flights: {len(outbound_flight_details)}, Inbound flights: {len(inbound_flight_details)}, Outbound buses: {len(outbound_bus_details)}, Inbound buses: {len(inbound_bus_details)}, Outbound trains: {len(outbound_train_details)}, Inbound trains: {len(inbound_train_details)}")
         print("Travel options fetched successfully.")
         return {
             "outbound_flight_details": outbound_flight_details,
